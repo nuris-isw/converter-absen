@@ -1,13 +1,29 @@
 :root {
+  /* Variabel untuk Mode Terang (sesuai kode Anda) */
   --background: #ffffff;
   --foreground: #171717;
+  --table-border-color: #ccc;
+  --table-header-bg: #f2f2f2;
+  --sticky-cell-bg: #ffffff;
+  --subheader-color: #555;
+  --button-excel-bg: #1d6f42;
+  --button-pdf-bg: #007bff;
+  --button-text-color: #ffffff;
 }
 
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    /* Nilai variabel yang sama, tapi untuk Mode Gelap */
+    --background: #171717;
     --foreground: #ededed;
+    --table-border-color: #4a4a4a;
+    --table-header-bg: #2a2a2a;
+    --sticky-cell-bg: #171717;
+    --subheader-color: #aaa;
+    --button-excel-bg: #22c55e;
+    --button-pdf-bg: #3b82f6;
+    --button-text-color: #ffffff;
   }
 }
 
@@ -36,8 +52,7 @@ a {
   text-decoration: none;
 }
 
-/* Tambahkan ini di akhir file globals.css */
-
+/* Semua style di bawah ini sekarang menggunakan variabel */
 table { 
   width: 100%; 
   border-collapse: collapse; 
@@ -46,14 +61,14 @@ table {
 }
 
 td, th { 
-  border: 1px solid #ccc; 
+  border: 1px solid var(--table-border-color); 
   padding: 8px; 
   text-align: center; 
   white-space: nowrap; 
 }
 
 th { 
-  background-color: #f2f2f2;
+  background-color: var(--table-header-bg);
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -65,7 +80,7 @@ th {
   position: sticky;
   left: 0;
   top: 0;
-  background-color: #f2f2f2;
+  background-color: var(--table-header-bg);
   z-index: 30;
 }
 
@@ -77,8 +92,8 @@ th {
   position: -webkit-sticky;
   position: sticky;
   text-align: start;
-  left: 37px; /* Diubah dari 60px */
-  background-color: white;
+  left: 37px;
+  background-color: var(--sticky-cell-bg);
   z-index: 10;
   width: 200px;
 }
@@ -87,9 +102,9 @@ th {
   position: -webkit-sticky;
   position: sticky;
   left: 0;
-  background-color: white;
+  background-color: var(--sticky-cell-bg);
   z-index: 10;
-  width: 40px; /* Diubah dari 60px */
+  width: 40px;
 }
 
 .sticky-th-no { 
@@ -104,7 +119,7 @@ th {
 
 .report-subheader { 
   font-size: 14px; 
-  color: #555; 
+  color: var(--subheader-color); 
   margin: 0; 
   padding-bottom: 1rem;
 }
@@ -112,8 +127,8 @@ th {
 .export-button { 
   padding: 8px 12px; 
   cursor: pointer; 
-  background-color: #1d6f42; 
-  color: white; 
+  background-color: var(--button-excel-bg); 
+  color: var(--button-text-color); 
   border: none; 
   border-radius: 5px; 
   font-size: 12px; 
@@ -121,11 +136,25 @@ th {
 }
 
 .pdf-button { 
-  background-color: #007bff; 
+  background-color: var(--button-pdf-bg); 
+}
+
+/* Tambahkan ini di paling akhir globals.css */
+
+.highlight-yellow {
+  background-color: #fff9c4;
+}
+.highlight-blue {
+  background-color: #e0f7fa;
+}
+.highlight-orange {
+  background-color: #ffe8cc;
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+  .highlight-yellow,
+  .highlight-blue,
+  .highlight-orange {
+    color: #171717; /* Paksa teks menjadi hitam di mode gelap */
   }
 }

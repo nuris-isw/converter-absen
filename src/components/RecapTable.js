@@ -3,10 +3,6 @@
 import React from 'react';
 
 export default function RecapTable({ recapData }) {
-    const yellowHighlight = { backgroundColor: '#fff9c4' };
-    const blueHighlight = { backgroundColor: '#e0f7fa' };
-    const orangeHighlight = { backgroundColor: '#ffe8cc' };
-
     return (
         <table>
             <thead>
@@ -27,11 +23,12 @@ export default function RecapTable({ recapData }) {
                         <td>{index + 1}</td>
                         <td className="employee-name">{recap.nama}</td>
                         <td>{recap['Hadir']}</td>
-                        <td style={recap['Tidak Hadir'] > 0 ? orangeHighlight : {}}>{recap['Tidak Hadir']}</td>
-                        <td style={recap['Terlambat'] > 0 ? yellowHighlight : {}}>{recap['Terlambat']}</td>
-                        <td style={recap['Pulang Awal'] > 0 ? yellowHighlight : {}}>{recap['Pulang Awal']}</td>
-                        <td style={recap['Lupa Absen Datang'] > 0 ? blueHighlight : {}}>{recap['Lupa Absen Datang']}</td>
-                        <td style={recap['Lupa Absen Pulang'] > 0 ? blueHighlight : {}}>{recap['Lupa Absen Pulang']}</td>
+                        {/* PERUBAHAN: Gunakan className, bukan style */}
+                        <td className={recap['Tidak Hadir'] > 0 ? 'highlight-orange' : ''}>{recap['Tidak Hadir']}</td>
+                        <td className={recap['Terlambat'] > 0 ? 'highlight-yellow' : ''}>{recap['Terlambat']}</td>
+                        <td className={recap['Pulang Awal'] > 0 ? 'highlight-yellow' : ''}>{recap['Pulang Awal']}</td>
+                        <td className={recap['Lupa Absen Datang'] > 0 ? 'highlight-blue' : ''}>{recap['Lupa Absen Datang']}</td>
+                        <td className={recap['Lupa Absen Pulang'] > 0 ? 'highlight-blue' : ''}>{recap['Lupa Absen Pulang']}</td>
                     </tr>
                 ))}
             </tbody>
