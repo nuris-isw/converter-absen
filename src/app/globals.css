@@ -36,6 +36,94 @@ a {
   text-decoration: none;
 }
 
+/* Tambahkan ini di akhir file globals.css */
+
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  margin-bottom: 2rem; 
+  font-size: 14px; 
+}
+
+td, th { 
+  border: 1px solid #ccc; 
+  padding: 8px; 
+  text-align: center; 
+  white-space: nowrap; 
+}
+
+th { 
+  background-color: #f2f2f2;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.sticky-col { 
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  top: 0;
+  background-color: #f2f2f2;
+  z-index: 30;
+}
+
+.employee-name { 
+  text-align: left;
+}
+
+.sticky-name { 
+  position: -webkit-sticky;
+  position: sticky;
+  text-align: start;
+  left: 37px; /* Diubah dari 60px */
+  background-color: white;
+  z-index: 10;
+  width: 200px;
+}
+
+.sticky-no { 
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  background-color: white;
+  z-index: 10;
+  width: 40px; /* Diubah dari 60px */
+}
+
+.sticky-th-no { 
+  z-index: 40; /* Paling atas */
+}
+
+.report-header { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+.report-subheader { 
+  font-size: 14px; 
+  color: #555; 
+  margin: 0; 
+  padding-bottom: 1rem;
+}
+
+.export-button { 
+  padding: 8px 12px; 
+  cursor: pointer; 
+  background-color: #1d6f42; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  font-size: 12px; 
+  margin-left: 1rem; 
+}
+
+.pdf-button { 
+  background-color: #007bff; 
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
