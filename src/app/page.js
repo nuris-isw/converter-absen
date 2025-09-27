@@ -32,7 +32,7 @@ export default function HomePage() {
 
   return (
     <main style={{ fontFamily: 'sans-serif', padding: '2rem' }}>
-      <h1>Konverter Absensi Excel ke PDF</h1>
+      <h1>Konverter Absensi Excel Fingerprint</h1>
       <p>Unggah file Excel absensi Anda untuk diolah.</p>
 
       <div style={{ marginTop: '2rem', marginBottom: '2rem' }}>
