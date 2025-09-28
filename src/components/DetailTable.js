@@ -27,7 +27,7 @@ export default function DetailTable({ matrixData, topScrollRef, tableContainerRe
                     <thead>
                         <tr>
                             <th rowSpan="2" className="sticky-col sticky-th-no">No.</th>
-                            <th rowSpan="2" className="sticky-col" style={{ left: '58px' }}>Nama Pegawai</th>
+                            <th rowSpan="2" className="sticky-col" style={{ left: '37px' }}>Nama Pegawai</th>
                             {dates.map(date => <th colSpan="2" key={date}>{date}</th>)}
                         </tr>
                         <tr>
