@@ -43,7 +43,7 @@ export default function useAttendanceProcessor(rawData) {
                 let keterangan = 'Hadir';
                 const isFriday = rec.dayOfWeek === 5;
                 const pulangAwalTime = isFriday ? '11:00:00' : '13:00:00';
-                if (rec.masuk && rec.masuk > '08:00:00') keterangan = 'Terlambat';
+                if (rec.masuk && rec.masuk > '08:06:00') keterangan = 'Terlambat';
                 if (rec.pulang && rec.pulang < pulangAwalTime) keterangan = keterangan === 'Terlambat' ? 'Terlambat & Pulang Awal' : 'Pulang Awal';
                 if (!rec.masuk && rec.pulang) keterangan = 'Lupa Absen Datang';
                 if (rec.masuk && !rec.pulang) keterangan = 'Lupa Absen Pulang';
